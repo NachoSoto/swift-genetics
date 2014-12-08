@@ -16,7 +16,10 @@ extension DNA {
 			gene.polygon.drawWithSize(size, scale: scale, color: gene.color)
 		}
 
-		return UIGraphicsGetImageFromCurrentImageContext()
+		let image = UIGraphicsGetImageFromCurrentImageContext()
+		UIGraphicsEndImageContext()
+
+		return image
 	}
 }
 
