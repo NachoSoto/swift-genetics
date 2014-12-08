@@ -21,6 +21,7 @@ public struct Population {
 		self.referenceImage = referenceImage
 	}
 
+	// Inspired on http://chriscummins.cc/s/genetics/#
 	public func iterate() -> Population {
 		println("Iterating population: \(individuals.count)")
 
