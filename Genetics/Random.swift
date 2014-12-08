@@ -43,3 +43,38 @@ extension Bool {
 func roll(probability: Float) -> Bool {
 	return Float.Random() < probability
 }
+
+extension Array {
+	var randomElement: T {
+		return self[(0..<count).randomInt]
+	}
+}
+
+func randomElementInArray<T: Equatable>(array: [T], except exception: T) -> T {
+	precondition(array.count > 1)
+
+	var result = array.first!
+
+	while (result == exception) {
+		result = array.randomElement
+	}
+
+	return result
+}
+
+
+extension Range {
+	var randomInt: Int {
+		var offset = 0
+
+		if (startIndex as Int) < 0 {
+			offset = abs(startIndex as Int) // allow negative ranges
+		}
+
+		let mini = UInt32(startIndex as Int + offset)
+		let maxi = UInt32(endIndex   as Int + offset)
+
+		return Int(mini + arc4random_uniform(maxi - mini)) - offset
+	}
+}
+
