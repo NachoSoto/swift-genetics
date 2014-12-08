@@ -10,7 +10,7 @@ import Foundation
 
 public struct DNA {
 	private static var Length: Int = 120
-	private static var MutationChange: Float = 0.025
+	private static var MutationChance: Float = 0.1
 
 	public let genes: [Gene]
 
@@ -23,7 +23,7 @@ public struct DNA {
 
 		genes = map(zip(mother.genes, father.genes)) { (motherGene, fatherGene) in
 			let inheritedGene = (Bool.Random()) ? motherGene : fatherGene
-			let shouldMutateGene = roll(DNA.MutationChange)
+			let shouldMutateGene = roll(DNA.MutationChance)
 
 			return (shouldMutateGene) ? inheritedGene.mutate() : inheritedGene
 		}
