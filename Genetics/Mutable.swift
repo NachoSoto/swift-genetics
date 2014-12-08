@@ -16,13 +16,6 @@ extension UIColor {
 
 		return UIColor(red: components[0], green: components[1], blue: components[2], alpha: components[3])
 	}
-
-	private var components: [CGFloat] {
-		let components = CGColorGetComponents(CGColor)
-		let componentIndexes = 0..<Int(CGColorGetNumberOfComponents(CGColor))
-
-		return map(componentIndexes) { components[$0] }
-	}
 }
 
 extension CGFloat {
