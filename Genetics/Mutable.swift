@@ -14,7 +14,7 @@ extension UIColor {
 	func mutate() -> UIColor {
 		let components = self.components
 
-		return UIColor(red: components.red.mutate(), green: components.green.mutate(), blue: components.blue.mutate(), alpha: components.alpha.mutate())
+		return UIColor(red: components.red.mutate().clamp, green: components.green.mutate().clamp, blue: components.blue.mutate().clamp, alpha: components.alpha.mutate().clamp)
 	}
 }
 
@@ -24,11 +24,15 @@ extension CGFloat {
 
 		return self + (CGFloat.Random() * 2 * amount) - amount
 	}
+
+	var clamp: CGFloat {
+		return fmin(fmax(self, 0.0), 1.0)
+	}
 }
 
 extension CGPoint {
 	func mutate() -> CGPoint {
-		return CGPoint(x: x.mutate(), y: y.mutate())
+		return CGPoint(x: x.mutate().clamp, y: y.mutate().clamp)
 	}
 }
 
