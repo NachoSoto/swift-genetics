@@ -1,4 +1,4 @@
-Swift Generics
+Swift Genetics
 ==============
 
 This is my first attempt at Genetics Programming. I don't really know what I'm doing.
