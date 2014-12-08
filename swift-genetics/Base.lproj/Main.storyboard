@@ -54,14 +54,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="osR-gY-7gD">
-                                <rect key="frame" x="36" y="40" width="529" height="520"/>
+                                <rect key="frame" x="166" y="170" width="269" height="260"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="osR-gY-7gD" secondAttribute="centerY" id="1gW-Nm-F3u"/>
-                            <constraint firstItem="osR-gY-7gD" firstAttribute="top" secondItem="Hec-9Q-Wdq" secondAttribute="bottom" constant="20" id="4cb-CD-Krg"/>
-                            <constraint firstItem="osR-gY-7gD" firstAttribute="leading" secondItem="eGy-8e-2FT" secondAttribute="leadingMargin" constant="20" id="Hsc-zf-JBD"/>
+                            <constraint firstItem="osR-gY-7gD" firstAttribute="top" secondItem="Hec-9Q-Wdq" secondAttribute="bottom" constant="150" id="4cb-CD-Krg"/>
+                            <constraint firstItem="osR-gY-7gD" firstAttribute="leading" secondItem="eGy-8e-2FT" secondAttribute="leadingMargin" constant="150" id="Hsc-zf-JBD"/>
                             <constraint firstAttribute="centerX" secondItem="osR-gY-7gD" secondAttribute="centerX" id="XMW-4b-N4Y"/>
                         </constraints>
                     </view>

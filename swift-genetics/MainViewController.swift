@@ -29,9 +29,6 @@ class MainViewController: UIViewController {
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
 
-		view.backgroundColor = UIColor.greenColor()
-		imageView.backgroundColor = UIColor.redColor()
-
 		assert(referenceImage != nil, "Reference image was not set")
 
 		startWithPopulation(Population.PopulationForReferenceImage(referenceImage, withSize: 20))
