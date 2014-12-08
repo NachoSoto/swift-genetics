@@ -31,7 +31,10 @@ class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UI
 	// MARK:
 
 	private func imageSelected(image: UIImage) {
-		
+		let mainViewController = self.storyboard!.instantiateViewControllerWithIdentifier("Main") as MainViewController
+		mainViewController.referenceImage = image
+
+		navigationController!.pushViewController(mainViewController, animated: true)
 	}
 }
 

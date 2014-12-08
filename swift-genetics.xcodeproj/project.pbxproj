@@ -27,6 +27,8 @@
 		5786D3471A352878003BCD64 /* DNADrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3461A352878003BCD64 /* DNADrawing.swift */; };
 		57D98EBA1A352DB300D83872 /* FitnessCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D98EB91A352DB300D83872 /* FitnessCalculator.swift */; };
 		57F4BD5F1A3531E900E637E0 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F4BD5E1A3531E900E637E0 /* UIColor+Extensions.swift */; };
+		57F4BD6D1A35471D00E637E0 /* Population.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F4BD6C1A35471D00E637E0 /* Population.swift */; };
+		57F4BD6F1A35508D00E637E0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F4BD6E1A35508D00E637E0 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		5786D3481A352891003BCD64 /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; };
 		57D98EB91A352DB300D83872 /* FitnessCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessCalculator.swift; sourceTree = "<group>"; };
 		57F4BD5E1A3531E900E637E0 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "Extensions/UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		57F4BD6C1A35471D00E637E0 /* Population.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Population.swift; sourceTree = "<group>"; };
+		57F4BD6E1A35508D00E637E0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				5786D2E41A35095C003BCD64 /* IntroViewController.swift */,
+				57F4BD6E1A35508D00E637E0 /* MainViewController.swift */,
 				5786D2E61A35095C003BCD64 /* Main.storyboard */,
 			);
 			name = Controllers;
@@ -177,6 +182,7 @@
 				5786D3371A3513A3003BCD64 /* Invidivual.swift */,
 				5786D3391A351437003BCD64 /* DNA.swift */,
 				5786D33B1A351444003BCD64 /* Gene.swift */,
+				57F4BD6C1A35471D00E637E0 /* Population.swift */,
 				5786D33D1A3516FD003BCD64 /* Random.swift */,
 				5786D33F1A3517A1003BCD64 /* Polygon.swift */,
 				5786D3441A3522F9003BCD64 /* Mutable.swift */,
@@ -365,6 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57F4BD6F1A35508D00E637E0 /* MainViewController.swift in Sources */,
 				5786D2E51A35095C003BCD64 /* IntroViewController.swift in Sources */,
 				5786D2E31A35095C003BCD64 /* AppDelegate.swift in Sources */,
 			);
@@ -374,6 +381,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57F4BD6D1A35471D00E637E0 /* Population.swift in Sources */,
 				5786D33E1A3516FD003BCD64 /* Random.swift in Sources */,
 				57F4BD5F1A3531E900E637E0 /* UIColor+Extensions.swift in Sources */,
 				5786D3431A351A8B003BCD64 /* Array+Extensions.swift in Sources */,
