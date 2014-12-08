@@ -14,7 +14,11 @@ public typealias Fitness = Double
 public class FitnessCalculator {
 	public init() {}
 
-	public func fitnessBetweenImages(imageA: UIImage, _ imageB: UIImage) -> Fitness {
+	public func fitnessForDNA(dna: DNA, withReferenceImage image: UIImage) -> Fitness {
+		return fitnessBetweenImages(image, dna.drawWithSize(image.size, scale: image.scale))
+	}
+
+	private func fitnessBetweenImages(imageA: UIImage, _ imageB: UIImage) -> Fitness {
 		precondition(imageA.size == imageB.size, "Images must have the same size")
 		precondition(imageA.scale == imageB.scale, "Images must have the same scale")
 
