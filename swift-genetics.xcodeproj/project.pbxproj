@@ -1,0 +1,653 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5786D2E31A35095C003BCD64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D2E21A35095C003BCD64 /* AppDelegate.swift */; };
+		5786D2E51A35095C003BCD64 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D2E41A35095C003BCD64 /* IntroViewController.swift */; };
+		5786D2E81A35095C003BCD64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5786D2E61A35095C003BCD64 /* Main.storyboard */; };
+		5786D2EA1A35095C003BCD64 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5786D2E91A35095C003BCD64 /* Images.xcassets */; };
+		5786D2ED1A35095C003BCD64 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5786D2EB1A35095C003BCD64 /* LaunchScreen.xib */; };
+		5786D31C1A351392003BCD64 /* Genetics.h in Headers */ = {isa = PBXBuildFile; fileRef = 5786D31B1A351392003BCD64 /* Genetics.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5786D3221A351392003BCD64 /* Genetics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5786D3171A351392003BCD64 /* Genetics.framework */; };
+		5786D32B1A351392003BCD64 /* ArrayExtensionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D32A1A351392003BCD64 /* ArrayExtensionsTest.swift */; };
+		5786D32E1A351392003BCD64 /* Genetics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5786D3171A351392003BCD64 /* Genetics.framework */; };
+		5786D32F1A351392003BCD64 /* Genetics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5786D3171A351392003BCD64 /* Genetics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5786D3381A3513A3003BCD64 /* Invidivual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3371A3513A3003BCD64 /* Invidivual.swift */; };
+		5786D33A1A351437003BCD64 /* DNA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3391A351437003BCD64 /* DNA.swift */; };
+		5786D33C1A351444003BCD64 /* Gene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D33B1A351444003BCD64 /* Gene.swift */; };
+		5786D33E1A3516FD003BCD64 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D33D1A3516FD003BCD64 /* Random.swift */; };
+		5786D3401A3517A1003BCD64 /* Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D33F1A3517A1003BCD64 /* Polygon.swift */; };
+		5786D3431A351A8B003BCD64 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3421A351A8B003BCD64 /* Array+Extensions.swift */; };
+		5786D3451A3522F9003BCD64 /* Mutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3441A3522F9003BCD64 /* Mutable.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5786D3231A351392003BCD64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5786D2D51A35095C003BCD64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5786D3161A351392003BCD64;
+			remoteInfo = Genetics;
+		};
+		5786D3251A351392003BCD64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5786D2D51A35095C003BCD64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5786D2DC1A35095C003BCD64;
+			remoteInfo = "swift-genetics";
+		};
+		5786D32C1A351392003BCD64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5786D2D51A35095C003BCD64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5786D3161A351392003BCD64;
+			remoteInfo = Genetics;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5786D3331A351392003BCD64 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5786D32F1A351392003BCD64 /* Genetics.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5786D2DD1A35095C003BCD64 /* swift-genetics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-genetics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5786D2E11A35095C003BCD64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5786D2E21A35095C003BCD64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5786D2E41A35095C003BCD64 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		5786D2E71A35095C003BCD64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5786D2E91A35095C003BCD64 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		5786D2EC1A35095C003BCD64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		5786D3171A351392003BCD64 /* Genetics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Genetics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5786D31A1A351392003BCD64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5786D31B1A351392003BCD64 /* Genetics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Genetics.h; sourceTree = "<group>"; };
+		5786D3211A351392003BCD64 /* GeneticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeneticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5786D3291A351392003BCD64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5786D32A1A351392003BCD64 /* ArrayExtensionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsTest.swift; sourceTree = "<group>"; };
+		5786D3371A3513A3003BCD64 /* Invidivual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invidivual.swift; sourceTree = "<group>"; };
+		5786D3391A351437003BCD64 /* DNA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNA.swift; sourceTree = "<group>"; };
+		5786D33B1A351444003BCD64 /* Gene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gene.swift; sourceTree = "<group>"; };
+		5786D33D1A3516FD003BCD64 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
+		5786D33F1A3517A1003BCD64 /* Polygon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Polygon.swift; sourceTree = "<group>"; };
+		5786D3421A351A8B003BCD64 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+Extensions.swift"; path = "Extensions/Array+Extensions.swift"; sourceTree = "<group>"; };
+		5786D3441A3522F9003BCD64 /* Mutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mutable.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5786D2DA1A35095C003BCD64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5786D32E1A351392003BCD64 /* Genetics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5786D3131A351392003BCD64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5786D31E1A351392003BCD64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5786D3221A351392003BCD64 /* Genetics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5786D2D41A35095C003BCD64 = {
+			isa = PBXGroup;
+			children = (
+				5786D2DF1A35095C003BCD64 /* swift-genetics */,
+				5786D3181A351392003BCD64 /* Genetics */,
+				5786D3271A351392003BCD64 /* GeneticsTests */,
+				5786D2DE1A35095C003BCD64 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5786D2DE1A35095C003BCD64 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5786D2DD1A35095C003BCD64 /* swift-genetics.app */,
+				5786D3171A351392003BCD64 /* Genetics.framework */,
+				5786D3211A351392003BCD64 /* GeneticsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5786D2DF1A35095C003BCD64 /* swift-genetics */ = {
+			isa = PBXGroup;
+			children = (
+				5786D2E21A35095C003BCD64 /* AppDelegate.swift */,
+				5786D3031A350DA2003BCD64 /* Controllers */,
+				5786D3021A350D92003BCD64 /* Dependencies */,
+				5786D2E91A35095C003BCD64 /* Images.xcassets */,
+				5786D2EB1A35095C003BCD64 /* LaunchScreen.xib */,
+				5786D2E01A35095C003BCD64 /* Supporting Files */,
+			);
+			path = "swift-genetics";
+			sourceTree = "<group>";
+		};
+		5786D2E01A35095C003BCD64 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5786D2E11A35095C003BCD64 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5786D3021A350D92003BCD64 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		5786D3031A350DA2003BCD64 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5786D2E41A35095C003BCD64 /* IntroViewController.swift */,
+				5786D2E61A35095C003BCD64 /* Main.storyboard */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		5786D3181A351392003BCD64 /* Genetics */ = {
+			isa = PBXGroup;
+			children = (
+				5786D3371A3513A3003BCD64 /* Invidivual.swift */,
+				5786D3391A351437003BCD64 /* DNA.swift */,
+				5786D33B1A351444003BCD64 /* Gene.swift */,
+				5786D33D1A3516FD003BCD64 /* Random.swift */,
+				5786D33F1A3517A1003BCD64 /* Polygon.swift */,
+				5786D3411A351A77003BCD64 /* Extensions */,
+				5786D3191A351392003BCD64 /* Supporting Files */,
+				5786D3441A3522F9003BCD64 /* Mutable.swift */,
+			);
+			path = Genetics;
+			sourceTree = "<group>";
+		};
+		5786D3191A351392003BCD64 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5786D31B1A351392003BCD64 /* Genetics.h */,
+				5786D31A1A351392003BCD64 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5786D3271A351392003BCD64 /* GeneticsTests */ = {
+			isa = PBXGroup;
+			children = (
+				5786D32A1A351392003BCD64 /* ArrayExtensionsTest.swift */,
+				5786D3281A351392003BCD64 /* Supporting Files */,
+			);
+			path = GeneticsTests;
+			sourceTree = "<group>";
+		};
+		5786D3281A351392003BCD64 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5786D3291A351392003BCD64 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5786D3411A351A77003BCD64 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5786D3421A351A8B003BCD64 /* Array+Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5786D3141A351392003BCD64 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5786D31C1A351392003BCD64 /* Genetics.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5786D2DC1A35095C003BCD64 /* swift-genetics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5786D2FC1A35095C003BCD64 /* Build configuration list for PBXNativeTarget "swift-genetics" */;
+			buildPhases = (
+				5786D2D91A35095C003BCD64 /* Sources */,
+				5786D2DA1A35095C003BCD64 /* Frameworks */,
+				5786D2DB1A35095C003BCD64 /* Resources */,
+				5786D3331A351392003BCD64 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5786D32D1A351392003BCD64 /* PBXTargetDependency */,
+			);
+			name = "swift-genetics";
+			productName = "swift-genetics";
+			productReference = 5786D2DD1A35095C003BCD64 /* swift-genetics.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5786D3161A351392003BCD64 /* Genetics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5786D3301A351392003BCD64 /* Build configuration list for PBXNativeTarget "Genetics" */;
+			buildPhases = (
+				5786D3121A351392003BCD64 /* Sources */,
+				5786D3131A351392003BCD64 /* Frameworks */,
+				5786D3141A351392003BCD64 /* Headers */,
+				5786D3151A351392003BCD64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Genetics;
+			productName = Genetics;
+			productReference = 5786D3171A351392003BCD64 /* Genetics.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5786D3201A351392003BCD64 /* GeneticsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5786D3341A351392003BCD64 /* Build configuration list for PBXNativeTarget "GeneticsTests" */;
+			buildPhases = (
+				5786D31D1A351392003BCD64 /* Sources */,
+				5786D31E1A351392003BCD64 /* Frameworks */,
+				5786D31F1A351392003BCD64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5786D3241A351392003BCD64 /* PBXTargetDependency */,
+				5786D3261A351392003BCD64 /* PBXTargetDependency */,
+			);
+			name = GeneticsTests;
+			productName = GeneticsTests;
+			productReference = 5786D3211A351392003BCD64 /* GeneticsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5786D2D51A35095C003BCD64 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Nacho Soto";
+				TargetAttributes = {
+					5786D2DC1A35095C003BCD64 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					5786D3161A351392003BCD64 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					5786D3201A351392003BCD64 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = 5786D2D81A35095C003BCD64 /* Build configuration list for PBXProject "swift-genetics" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5786D2D41A35095C003BCD64;
+			productRefGroup = 5786D2DE1A35095C003BCD64 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5786D2DC1A35095C003BCD64 /* swift-genetics */,
+				5786D3161A351392003BCD64 /* Genetics */,
+				5786D3201A351392003BCD64 /* GeneticsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5786D2DB1A35095C003BCD64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5786D2E81A35095C003BCD64 /* Main.storyboard in Resources */,
+				5786D2ED1A35095C003BCD64 /* LaunchScreen.xib in Resources */,
+				5786D2EA1A35095C003BCD64 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5786D3151A351392003BCD64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5786D31F1A351392003BCD64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5786D2D91A35095C003BCD64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5786D2E51A35095C003BCD64 /* IntroViewController.swift in Sources */,
+				5786D2E31A35095C003BCD64 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5786D3121A351392003BCD64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5786D33E1A3516FD003BCD64 /* Random.swift in Sources */,
+				5786D3431A351A8B003BCD64 /* Array+Extensions.swift in Sources */,
+				5786D3401A3517A1003BCD64 /* Polygon.swift in Sources */,
+				5786D3451A3522F9003BCD64 /* Mutable.swift in Sources */,
+				5786D3381A3513A3003BCD64 /* Invidivual.swift in Sources */,
+				5786D33C1A351444003BCD64 /* Gene.swift in Sources */,
+				5786D33A1A351437003BCD64 /* DNA.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5786D31D1A351392003BCD64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5786D32B1A351392003BCD64 /* ArrayExtensionsTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5786D3241A351392003BCD64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5786D3161A351392003BCD64 /* Genetics */;
+			targetProxy = 5786D3231A351392003BCD64 /* PBXContainerItemProxy */;
+		};
+		5786D3261A351392003BCD64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5786D2DC1A35095C003BCD64 /* swift-genetics */;
+			targetProxy = 5786D3251A351392003BCD64 /* PBXContainerItemProxy */;
+		};
+		5786D32D1A351392003BCD64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5786D3161A351392003BCD64 /* Genetics */;
+			targetProxy = 5786D32C1A351392003BCD64 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5786D2E61A35095C003BCD64 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5786D2E71A35095C003BCD64 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5786D2EB1A35095C003BCD64 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5786D2EC1A35095C003BCD64 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5786D2FA1A35095C003BCD64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		5786D2FB1A35095C003BCD64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5786D2FD1A35095C003BCD64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage.build/iOS",
+				);
+				INFOPLIST_FILE = "swift-genetics/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5786D2FE1A35095C003BCD64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage.build/iOS",
+				);
+				INFOPLIST_FILE = "swift-genetics/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		5786D3311A351392003BCD64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Genetics/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5786D3321A351392003BCD64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Genetics/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5786D3351A351392003BCD64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GeneticsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5786D3361A351392003BCD64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = GeneticsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5786D2D81A35095C003BCD64 /* Build configuration list for PBXProject "swift-genetics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5786D2FA1A35095C003BCD64 /* Debug */,
+				5786D2FB1A35095C003BCD64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5786D2FC1A35095C003BCD64 /* Build configuration list for PBXNativeTarget "swift-genetics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5786D2FD1A35095C003BCD64 /* Debug */,
+				5786D2FE1A35095C003BCD64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5786D3301A351392003BCD64 /* Build configuration list for PBXNativeTarget "Genetics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5786D3311A351392003BCD64 /* Debug */,
+				5786D3321A351392003BCD64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		5786D3341A351392003BCD64 /* Build configuration list for PBXNativeTarget "GeneticsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5786D3351A351392003BCD64 /* Debug */,
+				5786D3361A351392003BCD64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5786D2D51A35095C003BCD64 /* Project object */;
+}
