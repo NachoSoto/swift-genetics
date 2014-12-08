@@ -17,7 +17,7 @@ public struct Population {
 	public init(individuals: [Individual], referenceImage: UIImage) {
 		assert(individuals.count > 0, "Invalid population")
 
-		self.individuals = sorted(individuals) { $0.fitness > $1.fitness }
+		self.individuals = sorted(individuals) { $0.fitness < $1.fitness }
 		self.referenceImage = referenceImage
 	}
 
@@ -27,23 +27,38 @@ public struct Population {
 
 		var offspring = [Individual]()
 
-		// The number of individuals from the current generation to select for breeding
-		let selectCount = Int(floor(Float(size) * Population.SelectionCutoff))
-		// The number of individuals to randomly generate
-		let generateCount = Int(ceil(1 / Population.SelectionCutoff))
+		if size > 1 {
+			// The number of individuals from the current generation to select for breeding
+			let selectCount = Int(floor(Float(size) * Population.SelectionCutoff))
+			// The number of individuals to randomly generate
+			let generateCount = Int(ceil(1 / Population.SelectionCutoff))
 
-		for i in 0..<selectCount {
-			for j in 0..<generateCount {
-				let randIndividual = randomElementInArray(Array(0..<selectCount), except: i)
+			for i in 0..<selectCount {
+				for j in 0..<generateCount {
+					let randIndividual = randomElementInArray(Array(0..<selectCount), except: i)
 
-				let dna = DNA(mother: individuals[i].dna, father: individuals[randIndividual].dna)
+					let dna = DNA(mother: individuals[i].dna, father: individuals[randIndividual].dna)
 
-				offspring.append(Individual(dna: dna, fitness: fitnessCalculator.fitnessForDNA(dna, withReferenceImage: referenceImage)))
+					offspring.append(Individual(dna: dna, fitness: fitnessCalculator.fitnessForDNA(dna, withReferenceImage: referenceImage)))
+				}
+			}
+
+			// fittest survives
+			offspring.append(individuals.first!)
+
+		} else {
+			// Asexual reproduction
+			let parent = individuals.first!
+			let childDNA = DNA(mother: parent.dna, father: parent.dna);
+
+			let child = Individual(dna: childDNA, fitness: fitnessCalculator.fitnessForDNA(childDNA, withReferenceImage: referenceImage))
+
+			if (child.fitness < parent.fitness) {
+				offspring = [child]
+			} else {
+				offspring = [parent]
 			}
 		}
-
-		// fittest survives
-		offspring.append(individuals.first!)
 
 		return Population(individuals: offspring, referenceImage: referenceImage)
 	}
