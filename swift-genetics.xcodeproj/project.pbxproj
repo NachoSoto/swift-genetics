@@ -24,6 +24,7 @@
 		5786D3401A3517A1003BCD64 /* Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D33F1A3517A1003BCD64 /* Polygon.swift */; };
 		5786D3431A351A8B003BCD64 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3421A351A8B003BCD64 /* Array+Extensions.swift */; };
 		5786D3451A3522F9003BCD64 /* Mutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3441A3522F9003BCD64 /* Mutable.swift */; };
+		5786D3471A352878003BCD64 /* DNADrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3461A352878003BCD64 /* DNADrawing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,8 @@
 		5786D33F1A3517A1003BCD64 /* Polygon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Polygon.swift; sourceTree = "<group>"; };
 		5786D3421A351A8B003BCD64 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+Extensions.swift"; path = "Extensions/Array+Extensions.swift"; sourceTree = "<group>"; };
 		5786D3441A3522F9003BCD64 /* Mutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mutable.swift; sourceTree = "<group>"; };
+		5786D3461A352878003BCD64 /* DNADrawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNADrawing.swift; sourceTree = "<group>"; };
+		5786D3481A352891003BCD64 /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				5786D2E21A35095C003BCD64 /* AppDelegate.swift */,
+				5786D3481A352891003BCD64 /* Testing.playground */,
 				5786D3031A350DA2003BCD64 /* Controllers */,
 				5786D3021A350D92003BCD64 /* Dependencies */,
 				5786D2E91A35095C003BCD64 /* Images.xcassets */,
@@ -179,9 +183,10 @@
 				5786D33B1A351444003BCD64 /* Gene.swift */,
 				5786D33D1A3516FD003BCD64 /* Random.swift */,
 				5786D33F1A3517A1003BCD64 /* Polygon.swift */,
+				5786D3441A3522F9003BCD64 /* Mutable.swift */,
+				5786D3461A352878003BCD64 /* DNADrawing.swift */,
 				5786D3411A351A77003BCD64 /* Extensions */,
 				5786D3191A351392003BCD64 /* Supporting Files */,
-				5786D3441A3522F9003BCD64 /* Mutable.swift */,
 			);
 			path = Genetics;
 			sourceTree = "<group>";
@@ -373,6 +378,7 @@
 			files = (
 				5786D33E1A3516FD003BCD64 /* Random.swift in Sources */,
 				5786D3431A351A8B003BCD64 /* Array+Extensions.swift in Sources */,
+				5786D3471A352878003BCD64 /* DNADrawing.swift in Sources */,
 				5786D3401A3517A1003BCD64 /* Polygon.swift in Sources */,
 				5786D3451A3522F9003BCD64 /* Mutable.swift in Sources */,
 				5786D3381A3513A3003BCD64 /* Invidivual.swift in Sources */,
