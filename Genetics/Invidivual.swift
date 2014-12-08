@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+public struct Individual {
+	public let dna: DNA
+	public let fitness: Fitness
+}
