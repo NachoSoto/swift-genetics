@@ -37,3 +37,11 @@ extension Polygon {
 		return Polygon(vertices: self.vertices.map { $0.mutate() })
 	}
 }
+
+private extension UIColor {
+	var components: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
+		let components = CGColorGetComponents(CGColor)
+
+		return (components[0], components[1], components[2], components[3])
+	}
+}

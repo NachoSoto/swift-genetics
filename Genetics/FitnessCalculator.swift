@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Surge
 
 public typealias Fitness = Double
 
@@ -38,10 +37,10 @@ public class FitnessCalculator {
 				let colorA = UIImage.colorAtPoint(point, imageWidth: width, withData: imageAData)
 				let colorB = UIImage.colorAtPoint(point, imageWidth: width, withData: imageBData)
 
-				fitness += colorA.distanceToColor(colorB)
+				fitness += distanceBetweenColors(colorA, colorB) as Fitness
 			}
 		}
-		
+
 		return fitness
 	}
 }
@@ -49,34 +48,26 @@ public class FitnessCalculator {
 private extension UIImage {
 	func imageData() -> UnsafePointer<UInt8> {
 		let pixelData = CGDataProviderCopyData(CGImageGetDataProvider(self.CGImage))
-
 		return CFDataGetBytePtr(pixelData)
 	}
+}
 
-	class func colorAtPoint(point: (x: Int, y: Int), imageWidth: Int, withData data: UnsafePointer<UInt8>) -> UIColor {
+private typealias ColorComponents = (red: CGFloat, blue: CGFloat, green: CGFloat)
+
+private func distanceBetweenColors(colorA: ColorComponents, colorB: ColorComponents) -> Double {
+	let delta = (red: colorA.red - colorB.red, green: colorA.green - colorB.green, blue: colorA.blue - colorB.blue)
+
+	return Double(delta.red * delta.red + delta.green * delta.green + delta.blue * delta.blue)
+}
+
+private extension UIImage {
+	class func colorAtPoint(point: (x: Int, y: Int), imageWidth: Int, withData data: UnsafePointer<UInt8>) -> ColorComponents {
 		let offset = 4 * ((imageWidth * point.y) + point.x)
 
 		var r = CGFloat(data[offset])
 		var g = CGFloat(data[offset + 1])
 		var b = CGFloat(data[offset + 2])
-		var a = CGFloat(data[offset + 3])
 
-		return UIColor(red: r, green: g, blue: b, alpha: a)
-	}
-}
-
-private extension UIColor {
-	func distanceToColor(color: UIColor) -> Double {
-		let componentsA = self.components
-		let componentsB = color.components
-
-		let delta = (red: componentsA.red - componentsB.red, green: componentsA.green - componentsB.green, blue: componentsA.blue - componentsB.blue)
-
-		return Double(delta.red * delta.red + delta.green * delta.green + delta.blue * delta.blue)
-
-		// This is orders of magnitud slower than the approach above :(
-//		return Array(zip(componentsA, componentsB))
-//			.map { Double(pow(($0 - $1), 2)) }
-//			.reduce(0, +)
+		return (red: r, green: g, blue: b)
 	}
 }
