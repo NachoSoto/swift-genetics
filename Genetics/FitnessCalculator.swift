@@ -42,7 +42,7 @@ public class FitnessCalculator {
 			}
 		}
 
-		return fitness
+		return (1.0 - fitness / Double(width * height * 3 * 256 * 256))
 	}
 }
 

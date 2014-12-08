@@ -17,7 +17,7 @@ public struct Population {
 	public init(individuals: [Individual], referenceImage: UIImage) {
 		assert(individuals.count > 0, "Invalid population")
 
-		self.individuals = sorted(individuals) { $0.fitness < $1.fitness }
+		self.individuals = sorted(individuals) { $0.fitness > $1.fitness }
 		self.referenceImage = referenceImage
 	}
 
@@ -48,7 +48,6 @@ public struct Population {
 
 			// fittest survives
 			offspring.append(individuals.first!)
-
 		} else {
 			// Asexual reproduction
 			let parent = individuals.first!
