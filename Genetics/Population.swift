@@ -9,7 +9,7 @@
 import Foundation
 
 public struct Population {
-	private static var SelectionCutoff: Float { return 0.25 }
+	private static var SelectionCutoff: Float { return 0.15 }
 
 	public let individuals: [Individual]
 	public let referenceImage: UIImage
@@ -22,6 +22,8 @@ public struct Population {
 	}
 
 	public func iterate() -> Population {
+		println("Iterating population: \(individuals.count)")
+
 		let size = individuals.count
 		let fitnessCalculator = FitnessCalculator()
 
@@ -29,9 +31,9 @@ public struct Population {
 
 		if size > 1 {
 			// The number of individuals from the current generation to select for breeding
-			let selectCount = Int(floor(Float(size) * Population.SelectionCutoff))
+			let selectCount = max(Int(floor(Float(size) * Population.SelectionCutoff)), 2)
 			// The number of individuals to randomly generate
-			let generateCount = Int(ceil(1 / Population.SelectionCutoff))
+			let generateCount = max(Int(ceil(1 / Population.SelectionCutoff)), 1)
 
 			for i in 0..<selectCount {
 				for j in 0..<generateCount {

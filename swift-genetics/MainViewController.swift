@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
 
 		assert(referenceImage != nil, "Reference image was not set")
 
-		startWithPopulation(Population.PopulationForReferenceImage(referenceImage, withSize: 20))
+		startWithPopulation(Population.PopulationForReferenceImage(referenceImage, withSize: 5))
 	}
 
 	func startWithPopulation(population: Population) {
