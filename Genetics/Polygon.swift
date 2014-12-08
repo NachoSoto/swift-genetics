@@ -14,6 +14,6 @@ public struct Polygon {
 	public let vertices: [CGPoint]
 
 	static func Random() -> Polygon {
-		return self(vertices: map([0..<VerticeCount]) { _ in CGPoint.Random() })
+		return self(vertices: map(0..<VerticeCount) { _ in CGPoint.Random() })
 	}
 }
