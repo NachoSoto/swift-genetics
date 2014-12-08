@@ -25,6 +25,8 @@
 		5786D3431A351A8B003BCD64 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3421A351A8B003BCD64 /* Array+Extensions.swift */; };
 		5786D3451A3522F9003BCD64 /* Mutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3441A3522F9003BCD64 /* Mutable.swift */; };
 		5786D3471A352878003BCD64 /* DNADrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3461A352878003BCD64 /* DNADrawing.swift */; };
+		57D98EBA1A352DB300D83872 /* FitnessCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D98EB91A352DB300D83872 /* FitnessCalculator.swift */; };
+		57F4BD5F1A3531E900E637E0 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F4BD5E1A3531E900E637E0 /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		5786D3441A3522F9003BCD64 /* Mutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mutable.swift; sourceTree = "<group>"; };
 		5786D3461A352878003BCD64 /* DNADrawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNADrawing.swift; sourceTree = "<group>"; };
 		5786D3481A352891003BCD64 /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; };
+		57D98EB91A352DB300D83872 /* FitnessCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FitnessCalculator.swift; sourceTree = "<group>"; };
+		57F4BD5E1A3531E900E637E0 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIColor+Extensions.swift"; path = "Extensions/UIColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +147,6 @@
 				5786D2E21A35095C003BCD64 /* AppDelegate.swift */,
 				5786D3481A352891003BCD64 /* Testing.playground */,
 				5786D3031A350DA2003BCD64 /* Controllers */,
-				5786D3021A350D92003BCD64 /* Dependencies */,
 				5786D2E91A35095C003BCD64 /* Images.xcassets */,
 				5786D2EB1A35095C003BCD64 /* LaunchScreen.xib */,
 				5786D2E01A35095C003BCD64 /* Supporting Files */,
@@ -157,13 +160,6 @@
 				5786D2E11A35095C003BCD64 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5786D3021A350D92003BCD64 /* Dependencies */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Dependencies;
 			sourceTree = "<group>";
 		};
 		5786D3031A350DA2003BCD64 /* Controllers */ = {
@@ -185,6 +181,7 @@
 				5786D33F1A3517A1003BCD64 /* Polygon.swift */,
 				5786D3441A3522F9003BCD64 /* Mutable.swift */,
 				5786D3461A352878003BCD64 /* DNADrawing.swift */,
+				57D98EB91A352DB300D83872 /* FitnessCalculator.swift */,
 				5786D3411A351A77003BCD64 /* Extensions */,
 				5786D3191A351392003BCD64 /* Supporting Files */,
 			);
@@ -221,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				5786D3421A351A8B003BCD64 /* Array+Extensions.swift */,
+				57F4BD5E1A3531E900E637E0 /* UIColor+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -377,8 +375,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5786D33E1A3516FD003BCD64 /* Random.swift in Sources */,
+				57F4BD5F1A3531E900E637E0 /* UIColor+Extensions.swift in Sources */,
 				5786D3431A351A8B003BCD64 /* Array+Extensions.swift in Sources */,
 				5786D3471A352878003BCD64 /* DNADrawing.swift in Sources */,
+				57D98EBA1A352DB300D83872 /* FitnessCalculator.swift in Sources */,
 				5786D3401A3517A1003BCD64 /* Polygon.swift in Sources */,
 				5786D3451A3522F9003BCD64 /* Mutable.swift in Sources */,
 				5786D3381A3513A3003BCD64 /* Invidivual.swift in Sources */,
@@ -560,7 +560,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -636,6 +635,7 @@
 				5786D2FE1A35095C003BCD64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5786D3301A351392003BCD64 /* Build configuration list for PBXNativeTarget "Genetics" */ = {
 			isa = XCConfigurationList;
@@ -644,6 +644,7 @@
 				5786D3321A351392003BCD64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5786D3341A351392003BCD64 /* Build configuration list for PBXNativeTarget "GeneticsTests" */ = {
 			isa = XCConfigurationList;
@@ -652,6 +653,7 @@
 				5786D3361A351392003BCD64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

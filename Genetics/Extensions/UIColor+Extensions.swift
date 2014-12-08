@@ -9,11 +9,9 @@
 import Foundation
 
 extension UIColor {
-	var components: [CGFloat] {
+	var components: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat) {
 		let components = CGColorGetComponents(CGColor)
-		let componentIndexes = 0..<Int(CGColorGetNumberOfComponents(CGColor))
 
-		return map(componentIndexes) { components[$0] }
+		return (components[0], components[1], components[2], components[3])
 	}
-	
 }

@@ -12,9 +12,9 @@ private let MutationAmount: Float = 0.1
 
 extension UIColor {
 	func mutate() -> UIColor {
-		let components = map(self.components) { $0.mutate() }
+		let components = self.components
 
-		return UIColor(red: components[0], green: components[1], blue: components[2], alpha: components[3])
+		return UIColor(red: components.red.mutate(), green: components.green.mutate(), blue: components.blue.mutate(), alpha: components.alpha.mutate())
 	}
 }
 
