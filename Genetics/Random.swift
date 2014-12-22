@@ -24,13 +24,13 @@ extension CGPoint {
 
 extension CGFloat {
 	static func Random() -> CGFloat {
-		return CGFloat(Float.Random())
+		return CGFloat(arc4random()) /  CGFloat(UInt32.max)
 	}
 }
 
 extension Float {
 	static func Random() -> Float {
-		return Float(arc4random()) /  Float(UInt32.max)
+		return Float(CGFloat.Random())
 	}
 }
 

@@ -9,8 +9,8 @@
 import Foundation
 
 public struct DNA {
-	private static var Length: Int = 60
-	private static var MutationChance: Float = 0.1
+	private static var Length: Int { return 150 }
+	private static var MutationChance: Float { return 0.03 }
 
 	public let genes: [Gene]
 

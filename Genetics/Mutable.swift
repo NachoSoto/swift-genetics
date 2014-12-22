@@ -8,7 +8,7 @@
 
 import Foundation
 
-private let MutationAmount: Float = 0.1
+private let MutationAmount: Float = 0.01
 
 extension UIColor {
 	func mutate() -> UIColor {

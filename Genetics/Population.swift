@@ -8,7 +8,7 @@
 
 import Foundation
 
-private let Size: Int = 30
+private let Size: Int = 40
 
 public struct Population {
 

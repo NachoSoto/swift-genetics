@@ -9,7 +9,7 @@
 import Foundation
 
 public struct Polygon {
-	private static var VerticeCount: Int { return 3 }
+	private static var VerticeCount: Int { return (3..<5).randomInt }
 
 	public let vertices: [CGPoint]
 
