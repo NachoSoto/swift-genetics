@@ -12,13 +12,13 @@ public struct Population {
 	private static var SelectionCutoff: Float { return 0.15 }
 
 	public let individuals: [Individual]
-	public let referenceImage: UIImage
+	public let referenceImageData: ImageDataType
 
-	public init(individuals: [Individual], referenceImage: UIImage) {
+	public init(individuals: [Individual], referenceImageData: ImageDataType) {
 		assert(individuals.count > 0, "Invalid population")
 
 		self.individuals = sorted(individuals) { $0.fitness > $1.fitness }
-		self.referenceImage = referenceImage
+		self.referenceImageData = referenceImageData
 	}
 
 	// Inspired on http://chriscummins.cc/s/genetics/#
@@ -42,7 +42,7 @@ public struct Population {
 
 					let dna = DNA(mother: individuals[i].dna, father: individuals[randIndividual].dna)
 
-					offspring.append(Individual(dna: dna, fitness: fitnessCalculator.fitnessForDNA(dna, withReferenceImage: referenceImage)))
+					offspring.append(Individual(dna: dna, fitness: fitnessCalculator.fitnessForDNA(dna, withReferenceImageData: referenceImageData)))
 				}
 			}
 
@@ -53,7 +53,7 @@ public struct Population {
 			let parent = individuals.first!
 			let childDNA = DNA(mother: parent.dna, father: parent.dna);
 
-			let child = Individual(dna: childDNA, fitness: fitnessCalculator.fitnessForDNA(childDNA, withReferenceImage: referenceImage))
+			let child = Individual(dna: childDNA, fitness: fitnessCalculator.fitnessForDNA(childDNA, withReferenceImageData: referenceImageData))
 
 			if (child.fitness < parent.fitness) {
 				offspring = [child]
@@ -62,7 +62,7 @@ public struct Population {
 			}
 		}
 
-		return Population(individuals: offspring, referenceImage: referenceImage)
+		return Population(individuals: offspring, referenceImageData: referenceImageData)
 	}
 
 	public var fittestIndividual: Individual {
@@ -74,12 +74,14 @@ extension Population {
 	public static func PopulationForReferenceImage(image: UIImage, withSize size: Int) -> Population {
 		let fitnessCalculator = FitnessCalculator()
 
+		let imageData = ImagePixels.ImagePixelsWithImage(image.CGImage)
+
 		let individuals: [Individual] = map(0..<size) { _ in
 			let dna = DNA()
 
-			return Individual(dna: dna, fitness: fitnessCalculator.fitnessForDNA(dna, withReferenceImage: image))
+			return Individual(dna: dna, fitness: fitnessCalculator.fitnessForDNA(dna, withReferenceImageData: imageData))
 		}
 
-		return Population(individuals: individuals, referenceImage: image)
+		return Population(individuals: individuals, referenceImageData: imageData)
 	}
 }

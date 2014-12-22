@@ -9,34 +9,40 @@
 import Foundation
 
 extension DNA {
-	public func drawWithSize(size: CGSize, scale: CGFloat) -> UIImage! {
-		UIGraphicsBeginImageContextWithOptions(size, true, scale)
-
+	public func drawWithSize(size: CGSize, inContext context: CGContextRef) {
 		for gene in genes {
-			gene.polygon.drawWithSize(size, scale: scale, color: gene.color)
+			gene.polygon.drawWithSize(size, color: gene.color, inContext: context)
 		}
-
-		let image = UIGraphicsGetImageFromCurrentImageContext()
-		UIGraphicsEndImageContext()
-
-		return image
 	}
 }
 
 private extension Polygon {
-	func drawWithSize(size: CGSize, scale: CGFloat, color: UIColor) {
-		let ctx = UIGraphicsGetCurrentContext()
+	func drawWithSize(size: CGSize, color: UIColor, inContext context: CGContextRef) {
 		let denormalizedVertices = map(vertices) { CGPointMake($0.x * size.width, $0.y * size.height) }
 
-		CGContextBeginPath(ctx)
+		CGContextBeginPath(context)
 
 		for (i, vertex) in enumerate(denormalizedVertices) {
 			let f = (i == 0) ? CGContextMoveToPoint : CGContextAddLineToPoint
 
-			f(ctx, vertex.x, vertex.y)
+			f(context, vertex.x, vertex.y)
 		}
 
-		CGContextSetFillColorWithColor(ctx, color.CGColor)
-		CGContextFillPath(ctx)
+		CGContextSetFillColorWithColor(context, color.CGColor)
+		CGContextFillPath(context)
 	}
 }
+
+extension DNA {
+	public func imageWithSize(size: CGSize, scale: CGFloat) -> UIImage! {
+		UIGraphicsBeginImageContextWithOptions(size, true, scale)
+
+		drawWithSize(size, inContext: UIGraphicsGetCurrentContext())
+		let image = UIGraphicsGetImageFromCurrentImageContext()
+
+		UIGraphicsEndImageContext()
+
+		return image
+ 	}
+}
+

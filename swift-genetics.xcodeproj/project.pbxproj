@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5754C57D1A47795D0078A120 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5754C57C1A47795D0078A120 /* ImageData.swift */; };
 		5786D2E31A35095C003BCD64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D2E21A35095C003BCD64 /* AppDelegate.swift */; };
 		5786D2E51A35095C003BCD64 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D2E41A35095C003BCD64 /* IntroViewController.swift */; };
 		5786D2E81A35095C003BCD64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5786D2E61A35095C003BCD64 /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5754C57C1A47795D0078A120 /* ImageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
 		5786D2DD1A35095C003BCD64 /* swift-genetics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-genetics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5786D2E11A35095C003BCD64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5786D2E21A35095C003BCD64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				5786D3441A3522F9003BCD64 /* Mutable.swift */,
 				5786D3461A352878003BCD64 /* DNADrawing.swift */,
 				57D98EB91A352DB300D83872 /* FitnessCalculator.swift */,
+				5754C57C1A47795D0078A120 /* ImageData.swift */,
 				5786D3411A351A77003BCD64 /* Extensions */,
 				5786D3191A351392003BCD64 /* Supporting Files */,
 			);
@@ -384,6 +387,7 @@
 				5786D3471A352878003BCD64 /* DNADrawing.swift in Sources */,
 				57D98EBA1A352DB300D83872 /* FitnessCalculator.swift in Sources */,
 				5786D3401A3517A1003BCD64 /* Polygon.swift in Sources */,
+				5754C57D1A47795D0078A120 /* ImageData.swift in Sources */,
 				5786D3451A3522F9003BCD64 /* Mutable.swift in Sources */,
 				5786D3381A3513A3003BCD64 /* Invidivual.swift in Sources */,
 				5786D33C1A351444003BCD64 /* Gene.swift in Sources */,

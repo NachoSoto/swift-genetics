@@ -14,61 +14,25 @@ public typealias Fitness = Double
 public class FitnessCalculator {
 	public init() {}
 
-	public func fitnessForDNA(dna: DNA, withReferenceImage image: UIImage) -> Fitness {
-		return fitnessBetweenImages(image, dna.drawWithSize(image.size, scale: image.scale))
+	public func fitnessForDNA(dna: DNA, withReferenceImageData referenceImageData: ImageDataType) -> Fitness {
+		return fitnessBetweenImages(referenceImageData, ImagePixels.ImageForDNA(dna, width: referenceImageData.width, height: referenceImageData.height))
 	}
 
-	private func fitnessBetweenImages(imageA: UIImage, _ imageB: UIImage) -> Fitness {
-		precondition(imageA.size == imageB.size, "Images must have the same size")
-		precondition(imageA.scale == imageB.scale, "Images must have the same scale")
-
-		let imageSize = imageA.size
-		let width = Int(imageSize.width)
-		let height = Int(imageSize.height)
+	private func fitnessBetweenImages(imageA: ImageDataType, _ imageB: ImageDataType) -> Fitness {
+		precondition(imageA.pixels.count == imageB.pixels.count)
 
 		var fitness: Fitness = 0
 
-		let imageAData = imageA.imageData()
-		let imageBData = imageB.imageData()
-
-		for x in 0..<width {
-			for y in 0..<height {
-				let point = (x, y)
-
-				let colorA = UIImage.colorAtPoint(point, imageWidth: width, withData: imageAData)
-				let colorB = UIImage.colorAtPoint(point, imageWidth: width, withData: imageBData)
-
-				fitness += distanceBetweenColors(colorA, colorB) as Fitness
-			}
+		for x in 0..<imageA.pixels.count {
+			fitness += distance(imageA.pixels[x], imageB.pixels[x]) as Fitness
 		}
 
-		return (1.0 - fitness / Double(width * height * 3 * 256 * 256))
+		return fitness
 	}
 }
-
-private extension UIImage {
-	func imageData() -> UnsafePointer<UInt8> {
-		let pixelData = CGDataProviderCopyData(CGImageGetDataProvider(self.CGImage))
-		return CFDataGetBytePtr(pixelData)
-	}
-}
-
-private typealias ColorComponents = (red: CGFloat, blue: CGFloat, green: CGFloat)
-
-private func distanceBetweenColors(colorA: ColorComponents, colorB: ColorComponents) -> Double {
-	let delta = (red: colorA.red - colorB.red, green: colorA.green - colorB.green, blue: colorA.blue - colorB.blue)
+private func distance(a: RGBPixel, b: RGBPixel) -> Double {
+	let delta = (red: a.red - b.red, green: a.green - b.green, blue: a.blue - b.blue)
 
 	return Double(delta.red * delta.red + delta.green * delta.green + delta.blue * delta.blue)
 }
 
-private extension UIImage {
-	class func colorAtPoint(point: (x: Int, y: Int), imageWidth: Int, withData data: UnsafePointer<UInt8>) -> ColorComponents {
-		let offset = 4 * ((imageWidth * point.y) + point.x)
-
-		var r = CGFloat(data[offset])
-		var g = CGFloat(data[offset + 1])
-		var b = CGFloat(data[offset + 2])
-
-		return (red: r, green: g, blue: b)
-	}
-}
