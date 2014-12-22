@@ -27,11 +27,12 @@ public class FitnessCalculator {
 			fitness += distance(imageA.pixels[x], imageB.pixels[x]) as Fitness
 		}
 
-		return fitness
+		return 1.0 - fitness
 	}
 }
-private func distance(a: RGBPixel, b: RGBPixel) -> Double {
-	let delta = (red: a.red - b.red, green: a.green - b.green, blue: a.blue - b.blue)
+
+private func distance(a: RGBAPixel, b: RGBAPixel) -> Double {
+	let delta = (red: Double(a.red) - Double(b.red), green: Double(a.green) - Double(b.green), blue: Double(a.blue) - Double(b.blue))
 
 	return Double(delta.red * delta.red + delta.green * delta.green + delta.blue * delta.blue)
 }

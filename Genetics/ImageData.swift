@@ -14,10 +14,10 @@ public protocol ImageDataType {
 	var width: UInt { get}
 	var height: UInt { get }
 
-	var pixels: [RGBPixel] { get }
+	var pixels: [RGBAPixel] { get }
 }
 
-public struct RGBPixel {
+public struct RGBAPixel {
 	public let red: UInt8
 	public let blue: UInt8
 	public let green: UInt8
@@ -25,7 +25,7 @@ public struct RGBPixel {
 }
 
 internal struct ImagePixels: ImageDataType {
-	let pixels: [RGBPixel]
+	let pixels: [RGBAPixel]
 
 	let width: UInt
 	let height: UInt
@@ -46,7 +46,7 @@ private func scaledDimensionsForPixelLimit(limit: UInt, #width: UInt, #height: U
 
 extension ImagePixels {
 	internal static func ImagePixelsWithImage(image: CGImageRef) -> ImagePixels {
-		let PixelLimit: UInt = 4000
+		let PixelLimit: UInt = 10000
 
 		let (width, height) = scaledDimensionsForPixelLimit(
 			PixelLimit,
@@ -55,7 +55,13 @@ extension ImagePixels {
 		)
 
 		return CreateImageWithWidth(width, height: height) { context in
+			CGContextTranslateCTM(context, 0, CGFloat(height));
+			CGContextScaleCTM(context, 1.0, -1.0);
+
 			CGContextDrawImage(context, CGRect(x: 0, y: 0, width: Int(width), height: Int(height)), image)
+
+			CGContextScaleCTM(context, 1.0, -1.0);
+			CGContextTranslateCTM(context, 0, -CGFloat(height));
 		}
 	}
 
@@ -76,10 +82,12 @@ extension ImagePixels {
 			CGBitmapInfo(CGImageAlphaInfo.NoneSkipLast.rawValue)
 		)
 
-		var pixels = [RGBPixel]()
+		drawing(context: context)
+
+		var pixels = [RGBAPixel]()
 		pixels.reserveCapacity(Int(height * width))
 
-		let data = unsafeBitCast(CGBitmapContextGetData(context), UnsafeMutablePointer<RGBPixel>.self)
+		let data = unsafeBitCast(CGBitmapContextGetData(context), UnsafeMutablePointer<RGBAPixel>.self)
 
 		for y in 0..<height {
 			for x in 0..<width {

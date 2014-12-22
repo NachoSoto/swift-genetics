@@ -8,14 +8,17 @@
 
 import Foundation
 
+private let Size: Int = 30
+
 public struct Population {
-	private static var SelectionCutoff: Float { return 0.15 }
+
+	private static var SelectionCutoff: Float { return 0.5 }
 
 	public let individuals: [Individual]
 	public let referenceImageData: ImageDataType
 
 	public init(individuals: [Individual], referenceImageData: ImageDataType) {
-		assert(individuals.count > 0, "Invalid population")
+		assert(individuals.count >= Size, "Invalid population")
 
 		self.individuals = sorted(individuals) { $0.fitness > $1.fitness }
 		self.referenceImageData = referenceImageData
@@ -23,18 +26,15 @@ public struct Population {
 
 	// Inspired on http://chriscummins.cc/s/genetics/#
 	public func iterate() -> Population {
-		println("Iterating population: \(individuals.count)")
-
-		let size = individuals.count
 		let fitnessCalculator = FitnessCalculator()
 
 		var offspring = [Individual]()
 
-		if size > 1 {
+		if individuals.count > 1 {
 			// The number of individuals from the current generation to select for breeding
-			let selectCount = max(Int(floor(Float(size) * Population.SelectionCutoff)), 2)
+			let selectCount = max(Int(floor(Float(Size) * Population.SelectionCutoff)), 2)
 			// The number of individuals to randomly generate
-			let generateCount = max(Int(ceil(1 / Population.SelectionCutoff)), 1)
+			let generateCount = max(Int(ceil(1.0 / Population.SelectionCutoff)), 1)
 
 			for i in 0..<selectCount {
 				for j in 0..<generateCount {
@@ -71,12 +71,12 @@ public struct Population {
 }
 
 extension Population {
-	public static func PopulationForReferenceImage(image: UIImage, withSize size: Int) -> Population {
+	public static func PopulationForReferenceImage(image: UIImage) -> Population {
 		let fitnessCalculator = FitnessCalculator()
 
 		let imageData = ImagePixels.ImagePixelsWithImage(image.CGImage)
 
-		let individuals: [Individual] = map(0..<size) { _ in
+		let individuals: [Individual] = map(0..<Size) { _ in
 			let dna = DNA()
 
 			return Individual(dna: dna, fitness: fitnessCalculator.fitnessForDNA(dna, withReferenceImageData: imageData))

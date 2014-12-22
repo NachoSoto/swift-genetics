@@ -17,7 +17,18 @@ class MainViewController: UIViewController {
 	private var population: Population? {
 		didSet {
 			if let population = population {
-				imageView.image = population.fittestIndividual.dna.drawWithSize(imageView.bounds.size, scale: view.contentScaleFactor)
+				let size = imageView.bounds.size
+				let scale = view.contentScaleFactor
+
+				println("Fittest: \(population.fittestIndividual.fitness)")
+
+				dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)) {
+					let image = population.fittestIndividual.dna.imageWithSize(size, scale: scale)
+
+					dispatch_sync(dispatch_get_main_queue()) {
+						self.imageView.image = image
+					}
+				}
 			}
 		}
 	}
@@ -31,7 +42,7 @@ class MainViewController: UIViewController {
 
 		assert(referenceImage != nil, "Reference image was not set")
 
-		startWithPopulation(Population.PopulationForReferenceImage(referenceImage, withSize: 5))
+		startWithPopulation(Population.PopulationForReferenceImage(referenceImage))
 	}
 
 	func startWithPopulation(population: Population) {
