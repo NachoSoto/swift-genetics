@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import ReactiveCocoa
+import LlamaKit
 
 private let Size: Int = 40
 
@@ -27,8 +29,12 @@ public struct Population {
 	// Inspired on http://chriscummins.cc/s/genetics/#
 	public func iterate() -> Population {
 		let fitnessCalculator = FitnessCalculator()
+		let referenceImage = referenceImageData
 
-		var offspring = [Individual]()
+		var offspring = [ColdSignal<Individual>]()
+
+		let queue = dispatch_queue_create("com.nachosoto.offspring",  DISPATCH_QUEUE_CONCURRENT)
+		let scheduler = QueueScheduler(queue)
 
 		if individuals.count > 1 {
 			// The number of individuals from the current generation to select for breeding
@@ -38,31 +44,25 @@ public struct Population {
 
 			for i in 0..<selectCount {
 				for j in 0..<generateCount {
-					let randIndividual = randomElementInArray(Array(0..<selectCount), except: i)
+					let randIndividualIndex = randomElementInArray(Array(0..<selectCount), except: i)
+					let dna = DNA(mother: individuals[i].dna, father: individuals[randIndividualIndex].dna)
 
-					let dna = DNA(mother: individuals[i].dna, father: individuals[randIndividual].dna)
+					let signal = ColdSignal<Individual> { (sink, _) in
+						sink.put(.Next(Box(Individual(dna: dna, fitness: fitnessCalculator.fitnessForDNA(dna, withReferenceImageData: referenceImage)))))
+						sink.put(.Completed)
+					}.evaluateOn(scheduler)
 
-					offspring.append(Individual(dna: dna, fitness: fitnessCalculator.fitnessForDNA(dna, withReferenceImageData: referenceImageData)))
+					offspring.append(signal)
 				}
 			}
 
 			// fittest survives
-			offspring.append(individuals.first!)
+			offspring.append(ColdSignal.single(individuals.first!))
 		} else {
-			// Asexual reproduction
-			let parent = individuals.first!
-			let childDNA = DNA(mother: parent.dna, father: parent.dna);
-
-			let child = Individual(dna: childDNA, fitness: fitnessCalculator.fitnessForDNA(childDNA, withReferenceImageData: referenceImageData))
-
-			if (child.fitness < parent.fitness) {
-				offspring = [child]
-			} else {
-				offspring = [parent]
-			}
+			fatalError("Asexual reproduction not supported")
 		}
 
-		return Population(individuals: offspring, referenceImageData: referenceImageData)
+		return Population(individuals: offspring.map { $0.single().value()! }, referenceImageData: referenceImage)
 	}
 
 	public var fittestIndividual: Individual {
