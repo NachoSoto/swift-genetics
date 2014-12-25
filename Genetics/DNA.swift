@@ -21,7 +21,7 @@ public struct DNA {
 	public init(mother: DNA, father: DNA) {
 		precondition(mother.genes.count == father.genes.count, "Invalid parents")
 
-		genes = map(zip(mother.genes, father.genes)) { (motherGene, fatherGene) in
+		genes = map(Zip2(mother.genes, father.genes)) { (motherGene, fatherGene) in
 			let inheritedGene = (Bool.Random()) ? motherGene : fatherGene
 			let shouldMutateGene = roll(DNA.MutationChance)
 

@@ -15,7 +15,6 @@
 		5786D2ED1A35095C003BCD64 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5786D2EB1A35095C003BCD64 /* LaunchScreen.xib */; };
 		5786D31C1A351392003BCD64 /* Genetics.h in Headers */ = {isa = PBXBuildFile; fileRef = 5786D31B1A351392003BCD64 /* Genetics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5786D3221A351392003BCD64 /* Genetics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5786D3171A351392003BCD64 /* Genetics.framework */; };
-		5786D32B1A351392003BCD64 /* ArrayExtensionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D32A1A351392003BCD64 /* ArrayExtensionsTest.swift */; };
 		5786D32E1A351392003BCD64 /* Genetics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5786D3171A351392003BCD64 /* Genetics.framework */; };
 		5786D32F1A351392003BCD64 /* Genetics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5786D3171A351392003BCD64 /* Genetics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5786D3381A3513A3003BCD64 /* Invidivual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3371A3513A3003BCD64 /* Invidivual.swift */; };
@@ -23,7 +22,6 @@
 		5786D33C1A351444003BCD64 /* Gene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D33B1A351444003BCD64 /* Gene.swift */; };
 		5786D33E1A3516FD003BCD64 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D33D1A3516FD003BCD64 /* Random.swift */; };
 		5786D3401A3517A1003BCD64 /* Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D33F1A3517A1003BCD64 /* Polygon.swift */; };
-		5786D3431A351A8B003BCD64 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3421A351A8B003BCD64 /* Array+Extensions.swift */; };
 		5786D3451A3522F9003BCD64 /* Mutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3441A3522F9003BCD64 /* Mutable.swift */; };
 		5786D3471A352878003BCD64 /* DNADrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3461A352878003BCD64 /* DNADrawing.swift */; };
 		57D98EBA1A352DB300D83872 /* FitnessCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D98EB91A352DB300D83872 /* FitnessCalculator.swift */; };
@@ -83,13 +81,11 @@
 		5786D31B1A351392003BCD64 /* Genetics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Genetics.h; sourceTree = "<group>"; };
 		5786D3211A351392003BCD64 /* GeneticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeneticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5786D3291A351392003BCD64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5786D32A1A351392003BCD64 /* ArrayExtensionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsTest.swift; sourceTree = "<group>"; };
 		5786D3371A3513A3003BCD64 /* Invidivual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invidivual.swift; sourceTree = "<group>"; };
 		5786D3391A351437003BCD64 /* DNA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNA.swift; sourceTree = "<group>"; };
 		5786D33B1A351444003BCD64 /* Gene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gene.swift; sourceTree = "<group>"; };
 		5786D33D1A3516FD003BCD64 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		5786D33F1A3517A1003BCD64 /* Polygon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Polygon.swift; sourceTree = "<group>"; };
-		5786D3421A351A8B003BCD64 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+Extensions.swift"; path = "Extensions/Array+Extensions.swift"; sourceTree = "<group>"; };
 		5786D3441A3522F9003BCD64 /* Mutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mutable.swift; sourceTree = "<group>"; };
 		5786D3461A352878003BCD64 /* DNADrawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNADrawing.swift; sourceTree = "<group>"; };
 		5786D3481A352891003BCD64 /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; };
@@ -207,7 +203,6 @@
 		5786D3271A351392003BCD64 /* GeneticsTests */ = {
 			isa = PBXGroup;
 			children = (
-				5786D32A1A351392003BCD64 /* ArrayExtensionsTest.swift */,
 				5786D3281A351392003BCD64 /* Supporting Files */,
 			);
 			path = GeneticsTests;
@@ -224,7 +219,6 @@
 		5786D3411A351A77003BCD64 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5786D3421A351A8B003BCD64 /* Array+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -383,7 +377,6 @@
 			files = (
 				57F4BD6D1A35471D00E637E0 /* Population.swift in Sources */,
 				5786D33E1A3516FD003BCD64 /* Random.swift in Sources */,
-				5786D3431A351A8B003BCD64 /* Array+Extensions.swift in Sources */,
 				5786D3471A352878003BCD64 /* DNADrawing.swift in Sources */,
 				57D98EBA1A352DB300D83872 /* FitnessCalculator.swift in Sources */,
 				5786D3401A3517A1003BCD64 /* Polygon.swift in Sources */,
@@ -399,7 +392,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5786D32B1A351392003BCD64 /* ArrayExtensionsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,7 +473,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -568,7 +560,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
