@@ -7,11 +7,10 @@
 //
 
 import Foundation
-import UIKit
 
 public typealias Fitness = Double
 
-public class FitnessCalculator {
+public final class FitnessCalculator {
 	public init() {}
 
 	public func fitnessForDNA(dna: DNA, withReferenceImageData referenceImageData: ImageDataType) -> Fitness {
@@ -23,17 +22,17 @@ public class FitnessCalculator {
 
 		var fitness: Fitness = 0
 
-		for x in 0..<imageA.pixels.count {
-			fitness += distance(imageA.pixels[x], imageB.pixels[x]) as Fitness
+		for (pixelA, pixelB) in Zip2(imageA.pixels, imageB.pixels) {
+			fitness += distance(pixelA, pixelB)
 		}
 
 		return 1.0 - fitness
 	}
 }
 
-private func distance(a: RGBAPixel, b: RGBAPixel) -> Double {
-	let delta = (red: Double(a.red) - Double(b.red), green: Double(a.green) - Double(b.green), blue: Double(a.blue) - Double(b.blue))
+private func distance(a: RGBAPixel, b: RGBAPixel) -> Fitness {
+	let delta = (red: Fitness(a.red) - Fitness(b.red), green: Fitness(a.green) - Fitness(b.green), blue: Fitness(a.blue) - Fitness(b.blue))
 
-	return Double(delta.red * delta.red + delta.green * delta.green + delta.blue * delta.blue)
+	return delta.red * delta.red + delta.green * delta.green + delta.blue * delta.blue
 }
 
