@@ -77,22 +77,25 @@ class MainViewController: UIViewController {
 
 	// MARK: Iteration
 
-	func startWithPopulation(population: Population) {
+	func startWithPopulation(var population: Population) {
 		self.population = population
 
-		iterate()
-	}
-
-	private func iterate() {
-		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-			let newPopulation = self.population!.iterate()
-
-			dispatch_async(dispatch_get_main_queue()) {
-				self.population = newPopulation
-
-				self.iterate()
+		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { [weak self] in
+			while self != nil {
+				population = self!.iterate(population)
 			}
 		}
+	}
+
+	private func iterate(population: Population) -> Population {
+		let newPopulation = population.iterate()
+
+		dispatch_async(dispatch_get_main_queue()) { [weak self] in
+			self?.population = newPopulation
+			return
+		}
+
+		return newPopulation
 	}
 
 	// MARK: Events
