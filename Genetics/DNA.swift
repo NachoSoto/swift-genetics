@@ -9,7 +9,7 @@
 import Foundation
 
 public struct DNA {
-	private static var Length: Int { return 250 }
+	private static var Length: Int { return 350 }
 
 	public let genes: [Gene]
 
