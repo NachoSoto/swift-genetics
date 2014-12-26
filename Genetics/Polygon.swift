@@ -9,11 +9,18 @@
 import Foundation
 
 public struct Polygon {
-	private static var VerticeCount: Int { return (3..<5).randomInt }
-
 	public let vertices: [CGPoint]
 
-	static func Random() -> Polygon {
-		return self(vertices: map(0..<VerticeCount) { _ in CGPoint.Random() })
+	public init(vertices: [CGPoint]) {
+		self.vertices = vertices
+	}
+
+	public init(rect: CGRect) {
+		self.init(vertices: [
+			CGPointMake(rect.origin.x, rect.origin.y),
+			CGPointMake(rect.origin.x + rect.size.width, rect.origin.y),
+			CGPointMake(rect.origin.x + rect.size.width, rect.origin.y + rect.size.height),
+			CGPointMake(rect.origin.x, rect.origin.y + rect.size.height),
+		])
 	}
 }

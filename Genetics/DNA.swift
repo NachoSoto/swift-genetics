@@ -9,13 +9,13 @@
 import Foundation
 
 public struct DNA {
-	private static var Length: Int { return 150 }
-	private static var MutationChance: Float { return 0.03 }
+	private static var Length: Int { return 250 }
+	private static var MutationChance: Float { return 0.08 }
 
 	public let genes: [Gene]
 
 	public init() {
-		genes = map(0..<DNA.Length) { _ in Gene.RandomGene() }
+		genes = map(0..<DNA.Length) { Gene.RandomGeneForIndex($0, withTotal: DNA.Length) }
 	}
 
 	public init(mother: DNA, father: DNA) {
@@ -23,9 +23,11 @@ public struct DNA {
 
 		genes = map(Zip2(mother.genes, father.genes)) { (motherGene, fatherGene) in
 			let inheritedGene = (Bool.Random()) ? motherGene : fatherGene
-			let shouldMutateGene = roll(DNA.MutationChance)
 
-			return (shouldMutateGene) ? inheritedGene.mutate() : inheritedGene
+			return inheritedGene.mutate(
+				color: roll(DNA.MutationChance),
+				polygon: roll(DNA.MutationChance)
+			)
 		}
 	}
 }

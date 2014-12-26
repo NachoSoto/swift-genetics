@@ -17,8 +17,11 @@ extension UIColor {
 }
 
 extension CGPoint {
-	static func Random() -> CGPoint {
-		return CGPoint(x: CGFloat.Random(), y: CGFloat.Random())
+	static func Random(inRect rect: CGRect) -> CGPoint {
+		return CGPoint(
+			x: rect.origin.x + CGFloat(RandomDouble(0, Double(rect.size.width))),
+			y: rect.origin.y + CGFloat(RandomDouble(0, Double(rect.size.height)))
+		)
 	}
 }
 
@@ -62,19 +65,29 @@ func randomElementInArray<T: Equatable>(array: [T], except exception: T) -> T {
 	return result
 }
 
-
 extension Range {
 	var randomInt: Int {
-		var offset = 0
+		var offset: Int = 0
 
 		if (startIndex as Int) < 0 {
 			offset = abs(startIndex as Int) // allow negative ranges
 		}
 
-		let mini = UInt32(startIndex as Int + offset)
-		let maxi = UInt32(endIndex   as Int + offset)
+		let start = startIndex as Int + offset
+		let end   = endIndex   as Int + offset
 
-		return Int(mini + arc4random_uniform(maxi - mini)) - offset
+		return RandomInt(start, end) - offset
 	}
 }
 
+func RandomInt(start: Int, end: Int) -> Int {
+	precondition(start < end)
+
+	return Int(start + arc4random_uniform(UInt32(end - start)))
+}
+
+func RandomDouble(start: Double, end: Double) -> Double {
+	precondition(start < end)
+
+	return Double(arc4random()) / Double(UInt32.max) * (end - start) + start
+}

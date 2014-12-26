@@ -13,8 +13,14 @@ private let MutationAmount: Float = 0.01
 extension UIColor {
 	func mutate() -> UIColor {
 		let components = self.components
+		let probability: Float = 1 / 4
 
-		return UIColor(red: components.red.mutate().clamp, green: components.green.mutate().clamp, blue: components.blue.mutate().clamp, alpha: components.alpha.mutate().clamp)
+		return UIColor(
+			red: roll(probability) ? components.red.mutate().clamp : components.red,
+			green: roll(probability) ? components.green.mutate().clamp : components.green,
+			blue: roll(probability) ? components.blue.mutate().clamp : components.blue,
+			alpha: roll(probability) ? components.alpha.mutate().clamp : components.alpha
+		)
 	}
 }
 
@@ -38,7 +44,11 @@ extension CGPoint {
 
 extension Polygon {
 	func mutate() -> Polygon {
-		return Polygon(vertices: self.vertices.map { $0.mutate() })
+		let probability = 1 / Float(self.vertices.count)
+
+		return Polygon(vertices: self.vertices.map {
+			return roll(probability) ? $0.mutate() : $0
+		})
 	}
 }
 

@@ -46,7 +46,7 @@ private func scaledDimensionsForPixelLimit(limit: UInt, #width: UInt, #height: U
 
 extension ImagePixels {
 	internal static func ImagePixelsWithImage(image: CGImageRef) -> ImagePixels {
-		let PixelLimit: UInt = 10000
+		let PixelLimit: UInt = 40000
 
 		let (width, height) = scaledDimensionsForPixelLimit(
 			PixelLimit,

@@ -10,7 +10,7 @@ import Foundation
 import ReactiveCocoa
 import LlamaKit
 
-private let Size: Int = 40
+private let Size: Int = 45
 
 public struct Population {
 
