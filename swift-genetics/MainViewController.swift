@@ -49,6 +49,8 @@ class MainViewController: UIViewController {
 	@IBOutlet private var mutationChanceLabel: UILabel!
 	@IBOutlet private var mutationChanceSlider: UISlider!
 	@IBOutlet private var mutationAmountLabel: UILabel!
+	@IBOutlet private var selectionCutoffLabel: UILabel!
+	@IBOutlet private var selectionCutoffSlider: UISlider!
 	@IBOutlet private var mutationAmountSlider: UISlider!
 	@IBOutlet private var fittestSurvivesSwitch: UISwitch!
 
@@ -103,12 +105,20 @@ class MainViewController: UIViewController {
 		updateSettings()
 	}
 
+	@IBAction func selectionCutoffChanged(sender: UISlider) {
+		updateSettings()
+	}
+
 	private func updateSettings() {
+		println("Updating settings")
+
 		Genetics.settings.mutationChance = mutationChanceSlider.value
 		Genetics.settings.mutationAmount = mutationAmountSlider.value
+		Genetics.settings.selectionCutoff = selectionCutoffSlider.value
 		Genetics.settings.fittestSurvives = fittestSurvivesSwitch.enabled
 
 		mutationChanceLabel.text = "Mutation chance: \(self.decimalNumberFormatter.stringFromNumber(Genetics.settings.mutationChance)!)"
 		mutationAmountLabel.text = "Mutation amount: \(self.decimalNumberFormatter.stringFromNumber(Genetics.settings.mutationAmount)!)"
+		selectionCutoffLabel.text = "Selection cutoff: \(self.decimalNumberFormatter.stringFromNumber(Genetics.settings.selectionCutoff)!)"
 	}
 }

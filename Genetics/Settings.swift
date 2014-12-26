@@ -14,5 +14,6 @@ public var settings = Settings()
 public struct Settings {
 	public var mutationAmount: Float = 0.01
 	public var mutationChance: Float = 0.08
+	public var selectionCutoff: Float = 0.3
 	public var fittestSurvives: Bool = false
 }

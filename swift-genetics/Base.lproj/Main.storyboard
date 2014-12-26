@@ -66,7 +66,7 @@
                                                 <color key="textColor" white="0.089999999999999997" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.080000000000000002" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="BzZ-ZA-EC7" userLabel="Chance">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.01" minValue="0.0" maxValue="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="BzZ-ZA-EC7" userLabel="Chance">
                                                 <rect key="frame" x="-2" y="40" width="224" height="31"/>
                                                 <connections>
                                                     <action selector="mutationChanceChanged:" destination="iPr-tg-FwG" eventType="valueChanged" id="wo2-yK-j1G"/>
@@ -78,20 +78,33 @@
                                                 <color key="textColor" white="0.089999999999999997" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.014999999999999999" minValue="0.0" maxValue="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="Jkv-lI-7mP" userLabel="Amount">
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.014999999999999999" minValue="0.0" maxValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="Jkv-lI-7mP" userLabel="Amount">
                                                 <rect key="frame" x="-2" y="140" width="224" height="31"/>
                                                 <connections>
                                                     <action selector="mutationAmountChanged:" destination="iPr-tg-FwG" eventType="valueChanged" id="fxW-ec-ZAB"/>
                                                 </connections>
                                             </slider>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selection cutoff" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NOO-Z1-c5D">
+                                                <rect key="frame" x="0.0" y="200" width="220" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="0.089999999999999997" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.29999999999999999" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qbI-7C-Cl5" userLabel="Cutoff">
+                                                <rect key="frame" x="-2" y="240" width="224" height="31"/>
+                                                <connections>
+                                                    <action selector="mutationAmountChanged:" destination="iPr-tg-FwG" eventType="valueChanged" id="iSg-xc-BP3"/>
+                                                    <action selector="selectionCutoffChanged:" destination="iPr-tg-FwG" eventType="valueChanged" id="B2A-y4-WvU"/>
+                                                </connections>
+                                            </slider>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fittest survives:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UNI-NF-P4e">
-                                                <rect key="frame" x="50" y="200" width="120" height="20.5"/>
+                                                <rect key="frame" x="50" y="300" width="120" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="0.089999999999999997" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ftp-rn-DXC">
-                                                <rect key="frame" x="85" y="240.5" width="51" height="31"/>
+                                                <rect key="frame" x="85" y="341" width="51" height="31"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Iterations:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="no5-be-mvj">
                                                 <rect key="frame" x="51" y="617.5" width="76" height="20.5"/>
@@ -109,23 +122,31 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="EUy-Ha-ELh" secondAttribute="trailing" id="0uM-ro-sNG"/>
+                                            <constraint firstAttribute="trailing" secondItem="qbI-7C-Cl5" secondAttribute="trailing" id="1Vt-uf-Tp2"/>
                                             <constraint firstItem="EUy-Ha-ELh" firstAttribute="leading" secondItem="CAN-Wp-iKg" secondAttribute="leading" id="35k-nc-FY5"/>
                                             <constraint firstAttribute="trailing" secondItem="BzZ-ZA-EC7" secondAttribute="trailing" id="7cd-d0-L9D"/>
-                                            <constraint firstItem="UNI-NF-P4e" firstAttribute="top" secondItem="Jkv-lI-7mP" secondAttribute="bottom" constant="30" id="HMd-yF-4lD"/>
+                                            <constraint firstItem="NOO-Z1-c5D" firstAttribute="leading" secondItem="CAN-Wp-iKg" secondAttribute="leading" id="9PQ-vU-LvH"/>
+                                            <constraint firstItem="qbI-7C-Cl5" firstAttribute="top" secondItem="NOO-Z1-c5D" secondAttribute="bottom" constant="20" id="N2h-88-UvC"/>
                                             <constraint firstItem="Jkv-lI-7mP" firstAttribute="leading" secondItem="CAN-Wp-iKg" secondAttribute="leading" id="NVN-l9-5oy"/>
                                             <constraint firstItem="BzZ-ZA-EC7" firstAttribute="leading" secondItem="CAN-Wp-iKg" secondAttribute="leading" id="Q98-sD-qrS"/>
                                             <constraint firstAttribute="centerX" secondItem="Ftp-rn-DXC" secondAttribute="centerX" id="RfZ-mp-X2F"/>
+                                            <constraint firstItem="qbI-7C-Cl5" firstAttribute="top" secondItem="NOO-Z1-c5D" secondAttribute="bottom" constant="20" id="UF1-eD-rYv"/>
+                                            <constraint firstItem="qbI-7C-Cl5" firstAttribute="top" secondItem="NOO-Z1-c5D" secondAttribute="bottom" constant="20" id="Vgt-A7-p6G"/>
                                             <constraint firstAttribute="bottom" secondItem="RpY-6y-RLK" secondAttribute="bottom" constant="30" id="YcC-1K-1TU"/>
                                             <constraint firstItem="Jkv-lI-7mP" firstAttribute="top" secondItem="siH-VQ-cDI" secondAttribute="bottom" constant="20" id="ZSc-Z7-6N0"/>
                                             <constraint firstItem="siH-VQ-cDI" firstAttribute="top" secondItem="BzZ-ZA-EC7" secondAttribute="bottom" constant="30" id="ari-21-WC2"/>
                                             <constraint firstItem="RpY-6y-RLK" firstAttribute="top" secondItem="no5-be-mvj" secondAttribute="bottom" constant="40" id="bBL-2t-5Qn"/>
                                             <constraint firstAttribute="trailing" secondItem="Jkv-lI-7mP" secondAttribute="trailing" id="bjQ-HE-jaS"/>
+                                            <constraint firstItem="UNI-NF-P4e" firstAttribute="top" secondItem="qbI-7C-Cl5" secondAttribute="bottom" constant="30" id="d20-2I-fsj"/>
                                             <constraint firstItem="EUy-Ha-ELh" firstAttribute="top" secondItem="CAN-Wp-iKg" secondAttribute="top" id="dSJ-Ql-Mwk"/>
                                             <constraint firstAttribute="trailing" secondItem="siH-VQ-cDI" secondAttribute="trailing" id="dbG-AR-2iH"/>
                                             <constraint firstAttribute="centerX" secondItem="RpY-6y-RLK" secondAttribute="centerX" id="dbv-Fo-Y25"/>
                                             <constraint firstItem="BzZ-ZA-EC7" firstAttribute="top" secondItem="EUy-Ha-ELh" secondAttribute="bottom" constant="20" id="gHk-Mi-ay3"/>
+                                            <constraint firstItem="qbI-7C-Cl5" firstAttribute="leading" secondItem="CAN-Wp-iKg" secondAttribute="leading" id="hMy-Yu-nEA"/>
                                             <constraint firstItem="Ftp-rn-DXC" firstAttribute="top" secondItem="UNI-NF-P4e" secondAttribute="bottom" constant="20" id="j2z-FE-Nz0"/>
                                             <constraint firstItem="siH-VQ-cDI" firstAttribute="leading" secondItem="CAN-Wp-iKg" secondAttribute="leading" id="q2N-Ei-eBP"/>
+                                            <constraint firstItem="NOO-Z1-c5D" firstAttribute="top" secondItem="Jkv-lI-7mP" secondAttribute="bottom" constant="30" id="qVS-vd-uuZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="NOO-Z1-c5D" secondAttribute="trailing" id="qve-PC-rRl"/>
                                             <constraint firstAttribute="centerX" secondItem="UNI-NF-P4e" secondAttribute="centerX" id="vNv-zh-wce"/>
                                             <constraint firstAttribute="centerX" secondItem="no5-be-mvj" secondAttribute="centerX" id="vWj-1J-iUb"/>
                                             <constraint firstItem="Jkv-lI-7mP" firstAttribute="top" secondItem="siH-VQ-cDI" secondAttribute="bottom" constant="20" id="xIe-Q1-L9U"/>
@@ -189,6 +210,8 @@
                         <outlet property="mutationAmountSlider" destination="Jkv-lI-7mP" id="8qB-xN-8Mh"/>
                         <outlet property="mutationChanceLabel" destination="EUy-Ha-ELh" id="5Ab-JQ-uQf"/>
                         <outlet property="mutationChanceSlider" destination="BzZ-ZA-EC7" id="x2J-KE-CdY"/>
+                        <outlet property="selectionCutoffLabel" destination="NOO-Z1-c5D" id="tgv-DM-xvj"/>
+                        <outlet property="selectionCutoffSlider" destination="qbI-7C-Cl5" id="671-LX-hGM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cm6-dl-TqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
