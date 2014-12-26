@@ -16,6 +16,8 @@ public struct Population {
 
 	private static var SelectionCutoff: Float { return 0.5 }
 
+	private static var Queue: dispatch_queue_t = { return dispatch_queue_create("com.nachosoto.offspring",  DISPATCH_QUEUE_CONCURRENT) }()
+
 	public let individuals: [Individual]
 	public let referenceImageData: ImageDataType
 
@@ -32,9 +34,7 @@ public struct Population {
 		let referenceImage = referenceImageData
 
 		var offspring = [ColdSignal<Individual>]()
-
-		let queue = dispatch_queue_create("com.nachosoto.offspring",  DISPATCH_QUEUE_CONCURRENT)
-		let scheduler = QueueScheduler(queue)
+		let scheduler = QueueScheduler(Population.Queue)
 
 		if individuals.count > 1 {
 			// The number of individuals from the current generation to select for breeding
@@ -48,7 +48,9 @@ public struct Population {
 					let dna = DNA(mother: individuals[i].dna, father: individuals[randIndividualIndex].dna)
 
 					let signal = ColdSignal<Individual> { (sink, _) in
-						sink.put(.Next(Box(Individual(dna: dna, fitness: fitnessCalculator.fitnessForDNA(dna, withReferenceImageData: referenceImage)))))
+						let individual = Individual(dna: dna, fitness: fitnessCalculator.fitnessForDNA(dna, withReferenceImageData: referenceImage))
+
+						sink.put(.Next(Box(individual)))
 						sink.put(.Completed)
 					}.evaluateOn(scheduler)
 
