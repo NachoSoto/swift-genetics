@@ -28,6 +28,12 @@ class IntroViewController: UIViewController, UIImagePickerControllerDelegate, UI
 		}
 	}
 
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+
+		imageSelected(UIImage(named: "image")!)
+	}
+
 	// MARK:
 
 	private func imageSelected(image: UIImage) {

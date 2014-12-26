@@ -17,5 +17,5 @@ DerivedData
 *.ipa
 *.xcuserstate
 
-Carthage.build
-Carthage.checkout
+Carthage/Build
+Carthage/Checkouts

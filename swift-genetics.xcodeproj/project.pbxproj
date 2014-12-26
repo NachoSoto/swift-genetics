@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5719FC791A4CC6D50099A600 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5719FC761A4CC6D50099A600 /* ReactiveCocoa.framework */; };
+		5719FC7A1A4CC6D50099A600 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5719FC761A4CC6D50099A600 /* ReactiveCocoa.framework */; };
+		5719FC7F1A4CC9B20099A600 /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5719FC761A4CC6D50099A600 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5719FC811A4CC9C90099A600 /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5719FC801A4CC9C90099A600 /* LlamaKit.framework */; };
+		5719FC831A4CC9CF0099A600 /* LlamaKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5719FC801A4CC9C90099A600 /* LlamaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5754C57D1A47795D0078A120 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5754C57C1A47795D0078A120 /* ImageData.swift */; };
 		5786D2E31A35095C003BCD64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D2E21A35095C003BCD64 /* AppDelegate.swift */; };
 		5786D2E51A35095C003BCD64 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D2E41A35095C003BCD64 /* IntroViewController.swift */; };
@@ -15,7 +20,6 @@
 		5786D2ED1A35095C003BCD64 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5786D2EB1A35095C003BCD64 /* LaunchScreen.xib */; };
 		5786D31C1A351392003BCD64 /* Genetics.h in Headers */ = {isa = PBXBuildFile; fileRef = 5786D31B1A351392003BCD64 /* Genetics.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5786D3221A351392003BCD64 /* Genetics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5786D3171A351392003BCD64 /* Genetics.framework */; };
-		5786D32B1A351392003BCD64 /* ArrayExtensionsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D32A1A351392003BCD64 /* ArrayExtensionsTest.swift */; };
 		5786D32E1A351392003BCD64 /* Genetics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5786D3171A351392003BCD64 /* Genetics.framework */; };
 		5786D32F1A351392003BCD64 /* Genetics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5786D3171A351392003BCD64 /* Genetics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5786D3381A3513A3003BCD64 /* Invidivual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3371A3513A3003BCD64 /* Invidivual.swift */; };
@@ -23,7 +27,6 @@
 		5786D33C1A351444003BCD64 /* Gene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D33B1A351444003BCD64 /* Gene.swift */; };
 		5786D33E1A3516FD003BCD64 /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D33D1A3516FD003BCD64 /* Random.swift */; };
 		5786D3401A3517A1003BCD64 /* Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D33F1A3517A1003BCD64 /* Polygon.swift */; };
-		5786D3431A351A8B003BCD64 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3421A351A8B003BCD64 /* Array+Extensions.swift */; };
 		5786D3451A3522F9003BCD64 /* Mutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3441A3522F9003BCD64 /* Mutable.swift */; };
 		5786D3471A352878003BCD64 /* DNADrawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5786D3461A352878003BCD64 /* DNADrawing.swift */; };
 		57D98EBA1A352DB300D83872 /* FitnessCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D98EB91A352DB300D83872 /* FitnessCalculator.swift */; };
@@ -63,6 +66,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5786D32F1A351392003BCD64 /* Genetics.framework in Embed Frameworks */,
+				5719FC7F1A4CC9B20099A600 /* ReactiveCocoa.framework in Embed Frameworks */,
+				5719FC831A4CC9CF0099A600 /* LlamaKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -70,6 +75,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5719FC761A4CC6D50099A600 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		5719FC801A4CC9C90099A600 /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LlamaKit.framework; path = Carthage/Build/iOS/LlamaKit.framework; sourceTree = "<group>"; };
 		5754C57C1A47795D0078A120 /* ImageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
 		5786D2DD1A35095C003BCD64 /* swift-genetics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-genetics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5786D2E11A35095C003BCD64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,13 +90,11 @@
 		5786D31B1A351392003BCD64 /* Genetics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Genetics.h; sourceTree = "<group>"; };
 		5786D3211A351392003BCD64 /* GeneticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeneticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5786D3291A351392003BCD64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5786D32A1A351392003BCD64 /* ArrayExtensionsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsTest.swift; sourceTree = "<group>"; };
 		5786D3371A3513A3003BCD64 /* Invidivual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invidivual.swift; sourceTree = "<group>"; };
 		5786D3391A351437003BCD64 /* DNA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNA.swift; sourceTree = "<group>"; };
 		5786D33B1A351444003BCD64 /* Gene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gene.swift; sourceTree = "<group>"; };
 		5786D33D1A3516FD003BCD64 /* Random.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 		5786D33F1A3517A1003BCD64 /* Polygon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Polygon.swift; sourceTree = "<group>"; };
-		5786D3421A351A8B003BCD64 /* Array+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Array+Extensions.swift"; path = "Extensions/Array+Extensions.swift"; sourceTree = "<group>"; };
 		5786D3441A3522F9003BCD64 /* Mutable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mutable.swift; sourceTree = "<group>"; };
 		5786D3461A352878003BCD64 /* DNADrawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DNADrawing.swift; sourceTree = "<group>"; };
 		5786D3481A352891003BCD64 /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; };
@@ -104,6 +109,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5786D32E1A351392003BCD64 /* Genetics.framework in Frameworks */,
+				5719FC791A4CC6D50099A600 /* ReactiveCocoa.framework in Frameworks */,
+				5719FC811A4CC9C90099A600 /* LlamaKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5719FC7A1A4CC6D50099A600 /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +139,7 @@
 				5786D2DF1A35095C003BCD64 /* swift-genetics */,
 				5786D3181A351392003BCD64 /* Genetics */,
 				5786D3271A351392003BCD64 /* GeneticsTests */,
+				57F0079B1A4CB83E00C7A2E1 /* Dependencies */,
 				5786D2DE1A35095C003BCD64 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -207,7 +216,6 @@
 		5786D3271A351392003BCD64 /* GeneticsTests */ = {
 			isa = PBXGroup;
 			children = (
-				5786D32A1A351392003BCD64 /* ArrayExtensionsTest.swift */,
 				5786D3281A351392003BCD64 /* Supporting Files */,
 			);
 			path = GeneticsTests;
@@ -224,9 +232,17 @@
 		5786D3411A351A77003BCD64 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				5786D3421A351A8B003BCD64 /* Array+Extensions.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		57F0079B1A4CB83E00C7A2E1 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				5719FC801A4CC9C90099A600 /* LlamaKit.framework */,
+				5719FC761A4CC6D50099A600 /* ReactiveCocoa.framework */,
+			);
+			name = Dependencies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,7 +399,6 @@
 			files = (
 				57F4BD6D1A35471D00E637E0 /* Population.swift in Sources */,
 				5786D33E1A3516FD003BCD64 /* Random.swift in Sources */,
-				5786D3431A351A8B003BCD64 /* Array+Extensions.swift in Sources */,
 				5786D3471A352878003BCD64 /* DNADrawing.swift in Sources */,
 				57D98EBA1A352DB300D83872 /* FitnessCalculator.swift in Sources */,
 				5786D3401A3517A1003BCD64 /* Polygon.swift in Sources */,
@@ -399,7 +414,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5786D32B1A351392003BCD64 /* ArrayExtensionsTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,7 +479,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -481,7 +495,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
 				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
@@ -508,6 +522,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = fast;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -517,6 +532,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -529,6 +545,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage.build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = "swift-genetics/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -543,6 +561,8 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage.build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				INFOPLIST_FILE = "swift-genetics/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -554,11 +574,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -568,7 +594,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -579,11 +604,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Genetics/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
