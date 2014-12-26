@@ -58,8 +58,9 @@ public struct Population {
 				}
 			}
 
-			// fittest survives
-			offspring.append(ColdSignal.single(individuals.first!))
+			if settings.fittestSurvives {
+				offspring.append(ColdSignal.single(individuals.first!))
+			}
 		} else {
 			fatalError("Asexual reproduction not supported")
 		}

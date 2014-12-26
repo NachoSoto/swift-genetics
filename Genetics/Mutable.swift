@@ -8,12 +8,10 @@
 
 import Foundation
 
-private let MutationAmount: Float = 0.01
-
 extension UIColor {
 	func mutate() -> UIColor {
 		let components = self.components
-		let probability: Float = 1 / 4
+		let probability: Float = (1 / 4) * 2
 
 		return UIColor(
 			red: roll(probability) ? components.red.mutate().clamp : components.red,
@@ -26,7 +24,7 @@ extension UIColor {
 
 extension CGFloat {
 	func mutate() -> CGFloat {
-		let amount = CGFloat(MutationAmount)
+		let amount = CGFloat(settings.mutationAmount)
 
 		return self + (CGFloat.Random() * 2 * amount) - amount
 	}
