@@ -82,7 +82,9 @@ class MainViewController: UIViewController {
 
 		dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { [weak self] in
 			while self != nil {
-				population = self!.iterate(population)
+				autoreleasepool {
+					population = self!.iterate(population)
+				}
 			}
 		}
 	}
