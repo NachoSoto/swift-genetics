@@ -9,8 +9,7 @@
 import Foundation
 
 public struct DNA {
-	private static var Length: Int { return 250 }
-	private static var MutationChance: Float { return 0.08 }
+	private static var Length: Int { return 350 }
 
 	public let genes: [Gene]
 
@@ -21,12 +20,14 @@ public struct DNA {
 	public init(mother: DNA, father: DNA) {
 		precondition(mother.genes.count == father.genes.count, "Invalid parents")
 
+		let chance = settings.mutationChance
+
 		genes = map(Zip2(mother.genes, father.genes)) { (motherGene, fatherGene) in
 			let inheritedGene = (Bool.Random()) ? motherGene : fatherGene
 
 			return inheritedGene.mutate(
-				color: roll(DNA.MutationChance),
-				polygon: roll(DNA.MutationChance)
+				color: roll(chance),
+				polygon: roll(chance)
 			)
 		}
 	}

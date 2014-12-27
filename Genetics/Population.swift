@@ -14,8 +14,6 @@ private let Size: Int = 45
 
 public struct Population {
 
-	private static var SelectionCutoff: Float { return 0.5 }
-
 	private static var Queue: dispatch_queue_t = { return dispatch_queue_create("com.nachosoto.offspring",  DISPATCH_QUEUE_CONCURRENT) }()
 
 	public let individuals: [Individual]
@@ -23,6 +21,8 @@ public struct Population {
 
 	public init(individuals: [Individual], referenceImageData: ImageDataType) {
 		assert(individuals.count >= Size, "Invalid population")
+
+		println("Creating population with \(individuals.count) individuals")
 
 		self.individuals = sorted(individuals) { $0.fitness > $1.fitness }
 		self.referenceImageData = referenceImageData
@@ -32,15 +32,16 @@ public struct Population {
 	public func iterate() -> Population {
 		let fitnessCalculator = FitnessCalculator()
 		let referenceImage = referenceImageData
+		let selectionCutoff = settings.selectionCutoff
 
 		var offspring = [ColdSignal<Individual>]()
 		let scheduler = QueueScheduler(Population.Queue)
 
 		if individuals.count > 1 {
 			// The number of individuals from the current generation to select for breeding
-			let selectCount = max(Int(floor(Float(Size) * Population.SelectionCutoff)), 2)
+			let selectCount = max(Int(floor(Float(Size) * selectionCutoff)), 2)
 			// The number of individuals to randomly generate
-			let generateCount = max(Int(ceil(1.0 / Population.SelectionCutoff)), 1)
+			let generateCount = max(Int(ceil(1.0 / selectionCutoff)), 1)
 
 			for i in 0..<selectCount {
 				for j in 0..<generateCount {
@@ -58,8 +59,9 @@ public struct Population {
 				}
 			}
 
-			// fittest survives
-			offspring.append(ColdSignal.single(individuals.first!))
+			if settings.fittestSurvives {
+				offspring.append(ColdSignal.single(individuals.first!))
+			}
 		} else {
 			fatalError("Asexual reproduction not supported")
 		}
